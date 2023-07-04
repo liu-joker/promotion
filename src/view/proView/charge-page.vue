@@ -207,9 +207,9 @@
                 this.$message({
                     message: res.data.respMessage,           
                 });
-                if(res.data.payUrl){
-                    window.location.href = res.data.payUrl     
-                }
+                    if(res.data.payUrl){
+                        window.location.href = res.data.payUrl     
+                    }
                }
             })
         },

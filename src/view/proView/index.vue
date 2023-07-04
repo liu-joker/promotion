@@ -215,15 +215,15 @@ export default {
             this.$router.push('/charge-page')
         },
         toCashOut(){
-            if(!this.token){
-                this.next_to = true
-                return
-            }
-         this.server_qrCode = true
+            // if(!this.token){
+            //     this.next_to = true
+            //     return
+            // }
+          //    this.server_qrCode = true
         
         
             // this.$message('Please contact customer service')
-            // this.$router.push('/cash-page')
+            this.$router.push('/cash-page')
         },
         toAdmin(){
             if(!this.token){

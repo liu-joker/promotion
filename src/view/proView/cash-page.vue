@@ -74,7 +74,7 @@
                </div>
                <div class="need_money ">预计到账金额：{{ amount_pay }} {{ currency }} </div>
             </div>
-            <!-- <div class="cash_point">
+            <div class="cash_point">
                 <div class="page_title" style="margin-top:0;">
                     <div class="page_title_cn">提现至</div>
                     <div class="page_title_en">Withdrawal to</div>
@@ -111,19 +111,28 @@
                         <div class="paymet_no_choose" v-else></div>
                     </div>
                 </div>
+                <div class="payment_tab bank_card" @click="toAddCard">
+                    <div class="payment_ico">
+                        <img src="../../assets/image/card.png" alt="">
+                                                            
+                    </div>
+                    <div class="paument_name">添加银行卡</div>  
+                </div>
                </div>
               
-            </div> -->
+            </div>
           </div>
           <div class="btn_def btn_lg" style="margin-bottom:20px;background: #FCB40B;">
             <div>提现</div>
             <div class="btn_en">Withdrawal</div>
           </div>
+         
         </div>
     </div>
 </template>
 
 <script>
+import {divide} from '../../utils/tool'
 export default {
     name: 'PromotionCashPage',
 
@@ -152,6 +161,9 @@ export default {
         goBack(){
             this.$router.go(-1)
         },
+        toAddCard(){
+            this.$router.push('/addCard')
+        },
         getRechargeRatio(){
             this.$axiosApi.getRechargeRatio(2).then(res=>{
                 let data = res.data
@@ -168,12 +180,12 @@ export default {
         getCurrency(){
             console.log(this.currency)
             let currency = this.currency
-            let data = this.currency_data
+            let data = JSON.parse(JSON.stringify(this.currency_data)) 
             let point_data = []
             data.map(v=>{
                 if(v.currency==currency){
-                    v.amount = (v.amount/100).toFixed(2)
-                    // this.amount = v.amount
+                    // v.amount = (v.amount/100).toFixed(2)
+                    v.amount =divide(v.amount)
                     this.amount_pay = v.amount
                     let num = Number(v.amount)/v.point
                     this.amount = Math.ceil(num * 100) / 100;   
@@ -189,11 +201,12 @@ export default {
             point_data.map(v=>{
                 if(v.id == id){
                     this.point = v.point
-                    // this.amount = v.amount
+                   
                     this.amount_pay = v.amount
                     let num = (Number(v.amount)/v.point)
                    
                     this.amount = Math.ceil(num * 100) / 100;  
+                    this.id = v.id
                 }
             })
         }

@@ -56,6 +56,11 @@ export default new Router({
       name: 'privacy',
       component: () => import('@/view/pages/privacy.vue'),
     },
+    {
+      path: '/addCard',
+      name: 'addCard',
+      component: () => import('@/view/proView/addCard.vue'),
+    },
 
    
   ],
