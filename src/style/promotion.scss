@@ -1,0 +1,332 @@
+.pro_container{
+    width:100%;
+    min-height: 100vh;
+    font-size:2rem;
+    .text_en{
+        font-size:10px;
+    }
+    .btn_share{
+        position: fixed;
+        bottom:0px;
+        left:0;
+        right:0;
+        background:#f8f8f8;
+        padding:10px 20px;
+    }
+    .btn_def{
+        border-radius: 6px;
+        background: #07C160;
+        font-weight:600;
+        font-size:16px;
+        padding:5px 0;
+        .btn_en{
+            font-size:10px;
+        }
+    }
+    .btn_lg{
+        margin-top:20px;
+        width:100%;
+
+    }
+    .page_banner{
+        width:100%;
+        background-color: #07C160;
+        height:270px;
+        .banner_top{
+            padding-top:15px;
+            position: relative;
+            color:#fff;
+            font-size:24px;
+            font-weight: 600;
+           .top_back{
+            position: absolute;
+            left:20px;
+            width:32px;
+            height:32px;
+            top:15px;
+             >img{
+                width:100%;
+                height:auto;
+
+             }
+           }
+        }
+        .banner_point{
+            margin-top:10px;
+            position: relative;
+            padding:0 20px;  
+            .amount_img{
+               width: 100%;
+                >img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+            .my_point{
+                position: absolute;
+                top:20px;
+                left:35px;
+                text-align: left;
+                font-weight: 600;
+                .point_en{
+                    font-size:12px;
+                    text-transform: none;
+                }
+                .point_count{
+                    font-size:28px;
+                    margin-top:10px;
+                }
+            }
+        }
+    }  
+    // page_home
+    .page_home{
+        padding:0 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .page_title{
+            margin:20px 0 10px 0;
+            color:#333;
+            font-weight: 600;
+            text-align: left;
+            position: relative;
+            .page_title_cn{
+                display: inline-block;
+                // background:linear-gradient(to right,#fff,#07C160);
+                // border-radius: 10px;
+                // padding-right:10px;
+                position: relative;
+                z-index: 1;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    left:0;
+                    right:-10px;
+                    top:10px;
+                    bottom:0;
+                    background:linear-gradient(to right,#fff,#07C160);
+                    border-radius: 10px;
+                    z-index: -1;
+                }
+            }
+            .page_title_en{
+                font-size:10px;
+                font-weight: 600;
+            }
+        }
+        .page_currency{
+            margin-top:10px;
+            width: 100%;
+            position: relative;
+           
+            .currency_img{
+                width:100%;
+                >img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+            .currency_text{
+                display: flex;
+                // padding:0 15px;
+                justify-content: space-between;
+                align-items: center;
+                color:#333;
+                font-size:20px;
+                position: absolute;
+                top:20px;
+                left:30%;
+                right:15px;
+                font-weight: 600;
+                .current_cur{
+                    text-align: left;
+                    flex:1;
+                }
+                .currency_select{
+                    height:30px;
+                    width:100px;
+                   
+                }
+            }
+            
+        }
+        .cash_point{
+            padding:15px;
+            background:#fff;
+            margin-top:10px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .page_input{
+            height:40px;
+            width:100%;
+            position: relative;
+            margin-bottom:10px;
+            .input_ico{
+                width:18px;
+                height:18px;
+                position: absolute;
+                left:5px;
+                top:11px;
+                >img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+        }
+        .point_list{
+            width:100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            .point_tab{
+                // background:#18B567;
+                background:rgba($color: #18B567, $alpha: .3);        
+                height:40px;
+                color:#fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                .point_ico{
+                    width:26px;
+                    height:26px;
+                    margin-right:5px;
+                    >img{
+                        width:100%;
+                        height:auto;
+                    }
+                }
+            }
+            .choose_point{
+                background:rgba($color: #18B567, $alpha:1);
+            }
+        }
+        .need_money{
+            color:#ADADAD;
+            font-size:14px;
+            margin-top:20px;
+            text-align: left;
+        }
+
+        .payment_list{
+            width:100%;
+            font-size: 14px;
+            color:#333;
+            .payment_tab{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding:8px 0;
+            }
+            .payment_ico{
+                width:24px;
+                height:24px;
+                margin-right:15px;
+                display: flex;
+                >img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+            .paument_name{
+              flex:1;
+              text-align: left;
+            }
+            .paymet_choose{
+                width:16px;
+                height:16px;
+             
+                >img{
+                    width:100%;
+                    height:100%;
+                }
+                .paymet_no_choose{
+                    width:14px;
+                    height:14px;
+                    border-radius: 50%;
+                    border:1px solid #ADADAD;
+                  ;
+                }
+            }
+        }
+
+        .cur_point{
+            display: flex;
+            color:#18B567;
+            font-size:16px;
+            line-height: 16px;
+            position: absolute;
+            right:15px;
+            top:20px;
+            .cur_point_ico{
+                width:20px;
+                height:20px;
+                display: inline-block;
+                margin:0 5px;
+                font-size:0;
+                >img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+        }
+
+    }
+
+    // pubil
+    .a-btn{
+        padding:0.8rem 1.8rem;
+        border-radius: .75rem;
+        display: inline-block;
+        margin:1.25rem 3rem;
+    }
+    .a-btn-default{
+        border-radius: 2rem;
+        width:15rem;
+        // background-color: rgb(251, 86, 58);
+        background-image: linear-gradient(to left,#9f5914 50px, #CD69C9);
+    }
+    .a-params{
+        // background-color: rgb(92, 232, 54);
+        background-image: linear-gradient(to left,#10a12d 50px, #5ce836);
+        border-radius: 2rem;
+        width:10rem;
+    }
+    .a-success{
+        // background-color: rgb(104, 223, 240);
+        background-image: linear-gradient(to left,#5fcc75 50px, #68dff0);
+        border-radius: 2rem;
+        width:10rem;
+    }
+    .a-link{
+        text-decoration: underline;
+        font-size: .875rem;
+    }
+    input{
+        background:none;  
+        outline:#07C160;  
+        border: 1px solid #07C160;
+        box-sizing: border-box;
+        padding-left: 30px;
+        // width: calc(100% - 10px);
+        width: 100%;
+        border-radius: 5px;
+        height:100%;
+        background:#F8F8F8;
+        &:focus{
+            order: 1px solid #07C160;
+        }
+    }
+    select{
+        border:none;
+        width: 100%;
+        height:100%;
+        border-radius: 5px;
+        font-size:16px;
+        font-weight: 600;
+        padding:0 5px;
+    }
+    
+}
